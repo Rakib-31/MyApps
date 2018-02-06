@@ -24,7 +24,7 @@ public class FourthActivity extends AppCompatActivity {
         String str = getIntent().getStringExtra("NAME");
         webView.loadUrl("http://"+str+"/");
     }
-
+//
     @Override
     public void onBackPressed() {
 
