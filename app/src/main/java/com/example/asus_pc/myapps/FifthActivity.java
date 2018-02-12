@@ -146,7 +146,7 @@ public class FifthActivity extends AppCompatActivity implements View.OnClickList
         }
 
         else if(v.getId() == R.id.button24){
-            Intent inten = new Intent(FifthActivity.this, FourthActivity.class);      //link up one layout to another
+            Intent inten = new Intent(FifthActivity.this, FourthActivity.class);      ////link up one layout to another
             inten.putExtra("KEY",string[0]);
             startActivity(inten);
         }
