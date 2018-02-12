@@ -28,6 +28,7 @@ public class LoginClass extends SQLiteOpenHelper {
         super(context, DatabaseName, null, versionNo);
         this.context = context;
     }
+    //
 
     @Override
     public void onCreate(SQLiteDatabase db) {
