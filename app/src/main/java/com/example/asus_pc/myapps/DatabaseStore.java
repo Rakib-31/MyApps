@@ -24,6 +24,7 @@ public class DatabaseStore extends SQLiteOpenHelper {
     public DatabaseStore(Context context) {
         super(context, DatabaseName, null, versionNo);
         this.context = context;
+        //
     }
 
     @Override
