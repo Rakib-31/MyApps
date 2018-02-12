@@ -102,7 +102,6 @@ public class FifthActivity extends AppCompatActivity implements View.OnClickList
         else if(v.getId() == R.id.button2){
             loginHelper.updateData("1","","");
             permission();
-            ///Log.d("tag",p);
         }
 
         else if(v.getId() == R.id.button3){
