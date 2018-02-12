@@ -32,26 +32,25 @@ public class LoginClass extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try{
-            Toast.makeText(context, "OnCreate is start ",Toast.LENGTH_LONG).show();
             db.execSQL(string);
         }
         catch(Exception e){
-            Toast.makeText(context, "Exception: " + e,Toast.LENGTH_LONG).show();
         }
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        try{Toast.makeText(context, "OnUpgrade is start ",Toast.LENGTH_LONG).show();
+        try{
             db.execSQL(str);
             onCreate(db);
         }catch(Exception e){
-            Toast.makeText(context, "Exception: " + e,Toast.LENGTH_LONG).show();
+
         }
     }
 
     public long insertData(String name, String email, String passward,String age){
+
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Name,name);
@@ -68,9 +67,11 @@ public class LoginClass extends SQLiteOpenHelper {
     }
 
     private boolean findPassward(String semail, String spass) {
+
         SQLiteDatabase sq = this.getReadableDatabase();
         Cursor cursor = sq.rawQuery("SELECT * FROM "+TableName,null);
         Boolean result = false;
+
         while(cursor.moveToNext())
         {
             String username = cursor.getString(1);

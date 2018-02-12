@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyApps</string>
     <string name="welcome">Welcome to our page!!!</string>
+    <string name="app_information"> Welcome </string>
 </resources>
