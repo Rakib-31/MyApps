@@ -1,5 +1,7 @@
 package com.example.asus_pc.myapps;
 
+//Creating databse for log in activity
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -12,8 +14,8 @@ import android.widget.Toast;
 
 public class LoginClass extends SQLiteOpenHelper {
 
-    private static final String DatabaseName = "Login_Database2.db";
-    private static final String TableName = "User_Detail2";
+    private static final String DatabaseName = "Login_Database2.db";    //database name
+    private static final String TableName = "User_Detail2";             //database table name
     private static final String ID = "ID";
     private static final String Name = "NAME";
     private static final String Age = "AGE";
@@ -28,7 +30,7 @@ public class LoginClass extends SQLiteOpenHelper {
         super(context, DatabaseName, null, versionNo);
         this.context = context;
     }
-    //
+    //Override method for creating database
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -39,6 +41,7 @@ public class LoginClass extends SQLiteOpenHelper {
         }
     }
 
+    //Override method for upgrad database
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
@@ -49,6 +52,8 @@ public class LoginClass extends SQLiteOpenHelper {
 
         }
     }
+
+    //method created for insert value in database
 
     public long insertData(String name, String email, String passward,String age){
 
@@ -61,6 +66,7 @@ public class LoginClass extends SQLiteOpenHelper {
         long rowId = sqLiteDatabase.insert(TableName,null,contentValues);
         return rowId;
     }
+//method created for searching value in database
 
     public boolean search(String s, String p)
     {
