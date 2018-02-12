@@ -1,5 +1,7 @@
 package com.example.asus_pc.myapps;
 
+//Creating databse for store link up weblink and app name
+
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,9 +12,8 @@ import android.util.Log;
 
 public class DatabaseStore extends SQLiteOpenHelper {
 
-    public static String set;
-    private static final String DatabaseName =set + ".db";
-    private static final String TableName = "Details2";
+    private static final String DatabaseName = "Database2.db";          //database name
+    private static final String TableName = "Details2";                  //database table name
     private static final String ID = "ID";
     private static final String Name = "AppName";
     private static final String url = "URL";
@@ -27,6 +28,8 @@ public class DatabaseStore extends SQLiteOpenHelper {
         //
     }
 
+    //Override method for creating database
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         try{
@@ -35,6 +38,8 @@ public class DatabaseStore extends SQLiteOpenHelper {
         catch(Exception e){
         }
     }
+
+    //Override method for upgrad database
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -45,6 +50,8 @@ public class DatabaseStore extends SQLiteOpenHelper {
 
         }
     }
+
+    //method created for insert value in database
 
     public void insertData(String name, String url1){
 
@@ -72,6 +79,8 @@ public class DatabaseStore extends SQLiteOpenHelper {
             sqLiteDatabase.insert(TableName,null,contentValues);
         }
     }
+
+    //method created for searching value in database
 
     public String search(int p)
     {
